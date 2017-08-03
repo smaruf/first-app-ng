@@ -3,7 +3,7 @@ import {UserService} from "./service/user.service";
 import {User} from "./model/user.model";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-groot',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

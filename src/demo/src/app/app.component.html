@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to App
+  </h1>
+</div>
+
+<app-new-user (userAdded)="newUserAdded($event)"></app-new-user>
+
+<ul>
+  <li *ngFor="let user of users" (click)="showUserDetails(user)">{{user.name}}</li>
+</ul>
+
+<div *ngIf="currentUser">
+  <app-user [user]="currentUser"></app-user>
+</div>

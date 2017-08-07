@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {UserService} from "./service/user.service";
 import {User} from "./model/user.model";
+import {UserService} from "./service/user.service";
 
 @Component({
   selector: 'app-groot',
@@ -19,7 +19,7 @@ export class AppComponent {
     this.currentUser = user;
   }
 
-  saveUser(name: HTMLInputElement, phone: HTMLInputElement) {
-    this.userService.addUser(name.value, phone.value);
+  newUserAdded(user: User) {
+    this.users.push(user);
   }
 }

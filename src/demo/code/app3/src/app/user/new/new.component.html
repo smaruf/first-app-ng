@@ -1,0 +1,22 @@
+<form ngNoForm>
+  Name: <input type="text" #name >
+  Phone: <input type="text" #phone >
+  <button type="button" (click)="saveUser(name, phone)">Save</button>
+</form>
+
+<br>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  Name: <input type="text" name="name" ngModel required>
+  Phone: <input type="text" name="phone" ngModel >
+  <button type="submit">Submit</button>
+</form>
+
+<br>
+
+<form [formGroup]="newUserForm" (ngSubmit)="onSubmit(newUserForm.value)">
+  Name: <input type="text" name="name" [formControl]="nameInput" >
+  <span *ngIf="newUserForm.controls['name'].touched && !nameInput.hasError('required')">Name Required</span>
+  Phone: <input type="text" name="phone" [formControl]="newUserForm.controls['phone']" >
+  <button type="submit">Submit</button>
+</form>

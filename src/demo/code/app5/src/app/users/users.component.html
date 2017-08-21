@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let user of users" [class.active]="isCurrentUser(user)">
+    <a [routerLink]="['/users', user.id]">{{user.name}}</a>
+  </li>
+</ul>
+
+<!--<div *ngIf="currentUser">-->
+  <!--<app-user [user]="currentUser"></app-user>-->
+<!--</div>-->
+<router-outlet></router-outlet>

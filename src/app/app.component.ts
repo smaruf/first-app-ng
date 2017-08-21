@@ -8,18 +8,5 @@ import {UserService} from "./service/user.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  users:User[] = [];
-  currentUser:User;
 
-  constructor(private userService: UserService) {
-    this.users = userService.getUsers();
-  }
-
-  showUserDetails(user: User) {
-    this.currentUser = user;
-  }
-
-  newUserAdded(user: User) {
-    this.users.push(user);
-  }
 }
